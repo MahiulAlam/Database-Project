@@ -1,0 +1,72 @@
+CREATE TABLE DEPARTMENT(D_id NUMBER(10),D_name VARCHAR2(20),Number_of_course NUMBER(10),Emp_ID NUMBER(10))
+CREATE TABLE ADMIN(Emp_ID NUMBER(10),E_Name VARCHAR2(20),Age NUMBER(10),Hiredate DATE)
+CREATE TABLE COURSE(Co_id NUMBER(10),Co_Title VARCHAR2(20),Section VARCHAR2(10),D_id NUMBER(10))
+CREATE TABLE TEACHER(T_id NUMBER(10),T_name VARCHAR2(20),Salary NUMBER(20),T_P_Number NUMBER(15),D_id NUMBER(10))
+CREATE TABLE TEACHER_1(K_id NUMBER(10),T_id NUMBER(10),Co_id NUMBER(20)) 
+CREATE TABLE STUDENT_1(C_ID NUMBER(10),City VARCHAR2(20),Country VARCHAR(20))
+CREATE TABLE STUDENT_2(J_id NUMBER(10),S_id NUMBER(10),Co_id NUMBER(10))
+CREATE TABLE STUDENT(S_id NUMBER(10),S_name VARCHAR(20),C_ID NUMBER(10),L_id NUMBER(10))
+CREATE TABLE LIBRARY(L_id NUMBER(10),L_capacity NUMBER(10),B_Name VARCHAR2(20))
+CREATE TABLE PROJECT(Pr_id NUMBER(10),Pr_Title VARCHAR2(20))
+CREATE TABLE TEACHER_2(M_id NUMBER(10),T_id NUMBER(10),Pr_id NUMBER(10))
+CREATE TABLE STUDENT_3(N_id NUMBER(10),S_id NUMBER(10),T_id NUMBER(10))
+
+
+
+
+alter table department add constraint con2 primary key(d_id)
+
+alter table department add constraint con3 foreign key(d_id) references teacher(t_id)
+
+
+
+select *
+from all_constraint
+where Table_name='TEACHER_3'
+
+
+
+alter table TEACHER_1 DROP constraint CON23
+
+
+select CO_TITLE
+from department,COURSE
+where COURSE.D_ID=DEPARTMENT.D_ID AND COURSE.D_ID=103
+
+
+
+insert into teacher(t_id,t_name,salary,t_p_number,d_id,emp_id) values(X_teacher.nextval,'mofiz',400,3234,108,205)
+
+
+
+
+""select *
+from all_constraints
+where Table_name='TEACHER_1'
+
+SELECT*
+FROM course
+
+
+insert into course(Co_id,Co_title,section,D_ID) values(303,'PL_1','B',107);
+
+select*
+from STUDENT_2
+
+drop table course
+
+
+alter table student_2 add constraint alam foreign key(co_id)references course(co_id)
+
+
+CREATE TABLE COURSE(Co_id NUMBER(10),Co_Title VARCHAR2(20),Section VARCHAR2(10),D_id NUMBER(10))
+
+
+alter table TEACHER_1 DROP constraint alam foreign key(Co_id) references course(Co_id)
+
+
+CREATE TABLE course
+(co_id NUMBER(10),Co_Title VARCHAR2(50),Section Varchar2(10),D_ID NUMBER(10),
+  CONSTRAINT suppliers_pk PRIMARY KEY (Co_id)
+);
+""
